@@ -8,20 +8,21 @@
   </head>
   <body>
     <main>
-        <div id="MainBoxHeader"><p id="CatOSLabel">CatOS <p id="CatOSSubLabel">(Fish Version)</p></div></p> 
+        <div id="MainBoxHeader"><p id="CatOSLabel">CatOS</div></p> 
         <div id="MainBox">
           <div id="UsernameDiv">
-            <label id="UsernameLabel" for="Username">Username</label>
-            <input type="text" id="UsernameBox" placeholder="Enter Username" name="username" required>
+            <p id="UsernameLabel">Username</p>
+            <input type="text" id="UsernameBox" placeholder="Enter Username">
           </div>
             <br>
           <div id="PasswordDiv">
-            <label id="PasswordLabel" for="Password">Password</label>
-            <input id="PasswordBox" type="text" placeholder="Enter Password" name="password" required>
+            <p id="PasswordLabel">Password</p>
+            <input id="PasswordBox" type="text" placeholder="Enter Password">
           </div> 
-            <button onclick="LoginButton()"> LOGIN </button>
-           
+            <p id="FailureText"> Failure Text </p>
+            <button id="LoginButtonID" onclick="LoginButton()"> LOGIN </button>
         </div>
+
     </main>
     <script src="index.js"></script>
   </body>
