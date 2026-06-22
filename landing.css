@@ -1,0 +1,65 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+#BackgroundImage { 
+    margin: 0;
+    padding: 0;
+    background-size: auto auto;
+    width: 100%;
+    height: 100vh;
+}
+body {
+  background-image: url("PHBackgroundImage.jpg");
+}
+/* thank you stack overflow we love youuuuuuu */
+.tooltip-trigger {
+  position: relative;
+  cursor: help;
+}
+
+
+.tooltip-trigger::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 125%; 
+  left: 50%;
+  transform: translateX(-50%); 
+  background-color: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  white-space: nowrap; 
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.tooltip-trigger:hover::after,
+.tooltip-trigger:hover::before {
+  visibility: visible;
+  opacity: .9;
+}
+
+#LandingMainBox {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: fit-content;
+  height: fit-content;
+  white-space: initial;
+  flex-direction: column;
+}
+
+#LandingHeaderText {
+  margin: 0;
+}
+
+#LandingSubtext {
+  margin: 0;
+}

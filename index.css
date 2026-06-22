@@ -80,6 +80,40 @@ label {
     top: 10%;
     justify-self: right;
 }
+
+/* thank you stack overflow we love youuuuuuu */
+.tooltip-trigger {
+  cursor: help;
+}
+
+
+.tooltip-trigger::after {
+    
+  position: relative;
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 125%; 
+  left: 100%;
+  transform: translateX(-50%); 
+  width: 50%;
+  background-color: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  white-space: wrap; 
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.tooltip-trigger:hover::after,
+.tooltip-trigger:hover::before {
+  visibility: visible;
+  opacity: .9;
+}
+
 @media screen and (max-height: 768px) {
     html {
         background-color: red;
