@@ -43,23 +43,67 @@ body {
   opacity: .9;
 }
 
+/* Welcome Box */ 
+#LandingMainBoxHeader {
+  background-color: rgb(170, 170, 170);
+  width: calc(100% + 25px);
+  height: 40px;
+  margin-top: -5px;
+  box-sizing: border-box;
+  filter: drop-shadow(0px 2.5px 0px #3b007e ) drop-shadow(-2.5px 0px #3b007e) drop-shadow(2.5px 0px #3b007e) drop-shadow(0px -2.5px #3b007e);
+  border-radius: 10px 10px 0 0;
+}
 #LandingMainBox {
-  background-color: white;
+  background-color: rgb(240, 242, 255);
+  left: 40%;
+  top: 40%;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 5px;
-  padding-right: 5px;
-  width: fit-content;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  width: 320px;
   height: fit-content;
-  white-space: initial;
   flex-direction: column;
+  border-radius: 10px 10px 5px 5px ; /* man i've no clue what we are doin' */
 }
 
 #LandingHeaderText {
-  margin: 0;
+  margin: 10px;
 }
 
 #LandingSubtext {
   margin: 0;
+}
+
+#WelcomeButton {
+  position: relative;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  left: 30%;
+}
+
+
+/* Top Bar */ 
+#TopBar {
+  position: absolute;
+  width: 99%;
+  font-size: large;
+  font-weight: bold;
+  display: flex;
+  backdrop-filter: blur(15px) hue-rotate(100deg) invert(80%) grayscale(70%) brightness(70%); /* got real specific here lmao */
+  background-color: rgba(0, 0, 0, 0.25); 
+  color: #fff; 
+  justify-content: space-between;
+  margin-left: 0%;
+}
+
+#TopBarOSLabel {
+  margin-left: 15px;
+}
+
+#TimeText {
+  margin-right: 15px;
 }
