@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
     setTimeout(updateTime ,1000);
-    
+    document.getElementById("MapWindow").style.visibility = "hidden"
 });
 
     function updateTime() {
@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 // I love you stack overflow https://stackoverflow.com/questions/48097791/how-to-keep-a-draggable-element-from-being-moved-outside-a-boundary
 // Make the DIV element draggable:
 dragElement(document.getElementById("LandingMainBox"));
+dragElement(document.getElementById("MapWindow"));
 
 var PADDING = 8;
 
@@ -57,6 +58,8 @@ function dragElement(elmnt) {
     document.onmouseup = closeDragElement;
     // call a function whenever the cursor moves:
     document.onmousemove = elementDrag;
+
+    e.preventDefault(); // oh heck yeah this got rid of the stupid text selection while drag
   }
 
   function elementDrag(e) {
@@ -91,4 +94,28 @@ function dragElement(elmnt) {
   }
 }
 
+function WelcomeWindowClose() {
+  document.getElementById("LandingMainBox").style.visibility = "hidden"
+}
 
+function MapOpen() {
+  console.log(document.getElementById("MapWindow").style.visibility)
+  if (document.getElementById("MapWindow").style.visibility == "visible") {
+    document.getElementById("MapWindow").style.visibility = "hidden"
+    document.getElementById("MapIcon").style.borderLeftStyle = "none"
+    document.getElementById("MapIcon").style.borderRightStyle = "none"
+    
+    console.log("t1")
+  } else if (document.getElementById("MapWindow").style.visibility == "hidden") {
+    document.getElementById("MapWindow").style.visibility = "visible"
+    document.getElementById("MapIcon").style.borderLeftStyle = "solid"
+    document.getElementById("MapIcon").style.borderRightStyle = "solid"
+    console.log("t2")
+  };
+}
+
+function MapClose() {
+  document.getElementById("MapWindow").style.visibility = "hidden"
+  document.getElementById("MapIcon").style.borderLeftStyle = "none"
+  document.getElementById("MapIcon").style.borderRightStyle = "none"
+}

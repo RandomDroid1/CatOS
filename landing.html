@@ -18,19 +18,33 @@
         <h1 id="LandingHeaderText"> Welcome to CatOS</h1>
         <h3 id="LandingSubtext"> The world's premier Operating System</h2>
         <p id="LandingP"> Click "Continue" to dismiss this popup.</p>
-        <button id="WelcomeButton"> Continue </button>
+        <button id="WelcomeButton" onclick="WelcomeWindowClose()"> Continue </button>
       </div>
       <div id="TopBar">
         <p id="TopBarOSLabel">
           CatOS
         </p>
+        <img class="PermanentWindowIcon" id="MapIcon" src="MapIcon.png" onclick="MapOpen()">
         <p id="TimeText">
           Loading...
         </p>
+  
       </div>
 
 
+      <div id="MapWindow">
+          <div id="MapWindowHeader">
+            <p id="MapHeader">
+              All Etsy Sales
+            </p>
+            <p id="MapCloseButton" onclick="MapClose()">
+              (X)
+            </p>
+          </div>
+          <img id="EtsyMap" src="WorldMap.jpg">
+      </div>
 
+      
     </main>
     <script src="landing.js"></script>
   </body>
