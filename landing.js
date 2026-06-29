@@ -1,7 +1,17 @@
+var biggestIndex = 2;
+var FishNumber = 0;
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
     setTimeout(updateTime ,1000);
     document.getElementById("MapWindow").style.visibility = "hidden"
+    document.getElementById("FishWindow").style.visibility = "hidden"
+    
 });
 
     function updateTime() {
@@ -21,6 +31,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 // Make the DIV element draggable:
 dragElement(document.getElementById("LandingMainBox"));
 dragElement(document.getElementById("MapWindow"));
+dragElement(document.getElementById("FishWindow"));
+
 
 var PADDING = 8;
 
@@ -99,23 +111,57 @@ function WelcomeWindowClose() {
 }
 
 function MapOpen() {
-  console.log(document.getElementById("MapWindow").style.visibility)
   if (document.getElementById("MapWindow").style.visibility == "visible") {
     document.getElementById("MapWindow").style.visibility = "hidden"
     document.getElementById("MapIcon").style.borderLeftStyle = "none"
     document.getElementById("MapIcon").style.borderRightStyle = "none"
-    
-    console.log("t1")
+    biggestIndex++;
+    document.getElementById("MapWindow").style.zIndex = biggestIndex;
   } else if (document.getElementById("MapWindow").style.visibility == "hidden") {
     document.getElementById("MapWindow").style.visibility = "visible"
     document.getElementById("MapIcon").style.borderLeftStyle = "solid"
     document.getElementById("MapIcon").style.borderRightStyle = "solid"
-    console.log("t2")
+    biggestIndex++;
+    document.getElementById("MapWindow").style.zIndex = biggestIndex;
   };
 }
 
-function MapClose() {
-  document.getElementById("MapWindow").style.visibility = "hidden"
-  document.getElementById("MapIcon").style.borderLeftStyle = "none"
-  document.getElementById("MapIcon").style.borderRightStyle = "none"
+
+
+function FishOpen() {
+  if (document.getElementById("FishWindow").style.visibility == "visible") {
+    document.getElementById("FishWindow").style.visibility = "hidden"
+    document.getElementById("FishIcon").style.borderLeftStyle = "none"
+    document.getElementById("FishIcon").style.borderRightStyle = "none"
+    biggestIndex++;
+    document.getElementById("FishWindow").style.zIndex = biggestIndex;
+  } else if (document.getElementById("FishWindow").style.visibility == "hidden") {
+    document.getElementById("FishWindow").style.visibility = "visible"
+    document.getElementById("FishIcon").style.borderLeftStyle = "solid"
+    document.getElementById("FishIcon").style.borderRightStyle = "solid"
+    biggestIndex++;  
+    document.getElementById("FishWindow").style.zIndex = biggestIndex;
+  };
+}
+
+// Zindex handling
+
+addWindowTapHandling(document.getElementById("MapWindow"))
+addWindowTapHandling(document.getElementById("FishWindow"))
+addWindowTapHandling(document.getElementById("LandingMainBox"))
+
+function addWindowTapHandling(elmnt) {
+  elmnt.addEventListener("mousedown", () =>
+    handleWindowTap(elmnt)
+  )
+}
+
+function handleWindowTap(elmnt) {
+  biggestIndex++; 
+  elmnt.style.zIndex = biggestIndex;
+}
+
+function FishClick() {
+  FishNumber++
+  document.getElementById("FishClickNumber").innerHTML = FishNumber
 }

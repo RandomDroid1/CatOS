@@ -25,6 +25,7 @@
           CatOS
         </p>
         <img class="PermanentWindowIcon" id="MapIcon" src="MapIcon.png" onclick="MapOpen()">
+        <img class="PermanentWindowIcon" id="FishIcon" src="FishIcon.png" onclick="FishOpen()">
         <p id="TimeText">
           Loading...
         </p>
@@ -33,17 +34,31 @@
 
 
       <div id="MapWindow">
-          <div id="MapWindowHeader">
+          <div class="WindowHeader">
             <p id="MapHeader">
               All Etsy Sales
             </p>
-            <p id="MapCloseButton" onclick="MapClose()">
+            <p class="WindowCloseButton" onclick="MapOpen()">
               (X)
             </p>
           </div>
           <img id="EtsyMap" src="WorldMap.jpg">
       </div>
 
+      <div id="FishWindow">
+          <div class="WindowHeader">
+            <p id="FishHeader">
+              The Fish Zone
+            </p>
+            <p class="WindowCloseButton" onclick="FishOpen()">
+              (X)
+            </p>
+          </div>
+          <div id="FishSubwindow">
+          <img src="FishIcon.png" id="FishGame" onclick="FishClick()">
+          <p id="FishClickNumber">0</p>
+          </div>
+      </div>
       
     </main>
     <script src="landing.js"></script>

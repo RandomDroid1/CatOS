@@ -9,11 +9,13 @@
   <body>
 
     <main>
-        <div id="MainBoxHeader">
-          <p id="CatOSLabel">CatOS</p> 
-           <span class="tooltip-trigger" data-tooltip="Don't have the login? That's alright! If you were solving the puzzle, you'd have to find the login and password elsewhere, but for this you can just start typing.">  <img id="InfoButtonID" src="InfoButton.png"></span>
-          </div>
+      <div id="MainWindow">
+        
         <div id="MainBox">
+          <div id="MainBoxHeader">
+          <p id="CatOSLabel">CatOS</p> 
+           <span class="tooltip-trigger" data-tooltip="You don't need the login, you can just start typing."> <img id="InfoButtonID" src="InfoButton.png"></span>
+          </div>
           <div id="UsernameDiv">
             <p id="UsernameLabel">Username</p>
             <input type="text" id="UsernameBox" placeholder="Enter Username">
@@ -25,7 +27,7 @@
           </div> 
             <button id="LoginButtonID" onclick="LoginButton()"> LOGIN </button>
         </div>
-
+      </div>
 
     </main>
     <script src="index.js"></script>
